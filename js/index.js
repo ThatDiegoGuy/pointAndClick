@@ -1,1 +1,2 @@
-document.getElementById('main').appendChild(document.createTextNode("Yooooo!!"));
+document.getElementById('mainTitle').innerText = "Point and click adventure.";
+document.getElementById("mainTitle").style.textAlign = "center";
