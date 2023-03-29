@@ -1,25 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Point-and-Click adventure</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">    
 </head>
-<body id="main">
-    <h1 id="mainTitle"></h1>
-    <div id="gameWindow">
-        <!--Foreground-->
+<body>
+    <div id="title">
+        <h1 id="mainTitle"></h1>
+    </div>
+        <div id="gameWindow">
+        <!-- dialogue bar -->
+        <div id="dialogueBar" class="foreground">
+            <div id="setMainDialogue">
+                <img id="hero" class="foreground" src="C:/Users/juant/OneDrive - SintLucas/Periode 3/Software Development/Point and Click" alt="portrait">
+                <div id="mainCharacterSpeech" class="foreground speech-bubble">...</div>
+
+                <div id="counterSpeech" class="foreground speech-bubble">...</div>
+                <img id="counterCharacter" class="foreground" src="" alt="The other person">
+                <div id="brownBar"></div>
+            </div>
+        </div>
+
+        <!-- Inventory -->
+        <div id="InventoryBox" class="foreground">
+            <p>Inventory</p>
+            <ul id="InventoryList">
+
+            </ul>
+        </div>
+
+
+        <!--Foreground-->   
+        <div id="character1" class="gameObject foreground">
+            <img src="" alt="character1">
+        </div>
+        <div id="character2" class="gameObject foreground">
+            <img src="" alt="character2">
+        </div>
+
+
         <!--Character-->
         <div id="mainCharacter" class="character">
             <img src="img/CharacterIdle.gif" alt="main character">
         </div>
+
+
         <!--Background-->
         <div id="tilemap" class="background">
-            <img src="img/Map.jpg" alt="tilemap 1">
+            <img draggable="false" src="img/Map.jpg" alt="tilemap 1">
         </div>
     </div>
+
+    <audio id="characterAudio" >
+        <source src="" type="audio/ogg">
+        <source src="" type="audio/mpeg">
+    </audio>
+    <audio id="counterAudio" >
+        <source src="" type="audio/ogg">
+        <source src="" type="audio/mpeg">
+    </audio>
 <script src="js/index.js"></script>
 </body>
+
 </html>
