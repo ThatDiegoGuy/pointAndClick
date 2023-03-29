@@ -134,8 +134,24 @@ p{
 }
 
 #character1{
-    top: 170px;
-    left: 493px;
-    width: 32px;
-    height: 64px;
+    top: 152px;
+    left: 480px;
+    display: none;
 }
+
+#amelia{
+    width: 50px;
+    height: 66px;
+}
+
+#character2{
+    display: none;
+    top: 146px;
+    left: 135px;
+}
+
+#bob{
+    width: 50px;
+    height: 66px;
+}
+
