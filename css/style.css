@@ -43,6 +43,8 @@ p{
     top: 380px;
     left: 520px;
     transition: all 1s ease-in-out;
+    width: 111px;
+    height: 180px;
 }
 
 #dialogueBar{
@@ -129,4 +131,11 @@ p{
     opacity: 0;
     width: 300px;
     transition: all 1s ease-in-out;
+}
+
+#character1{
+    top: 170px;
+    left: 493px;
+    width: 32px;
+    height: 64px;
 }
