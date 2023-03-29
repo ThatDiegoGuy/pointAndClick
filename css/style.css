@@ -64,8 +64,10 @@ p{
 }
 
 #hero{
-    left: 0px;
-    bottom: 0px;
+    left: -20px;
+    bottom: -60px;
+    width: 111px;
+    height: 180px;
 }
 
 #mainCharacterSpeech{
