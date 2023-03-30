@@ -58,7 +58,7 @@ p{
 }
 
 #brownBar{
-    position: relative;
+    position: absolute;
     height: 32px;
     width: 800px;
     background-color: #442c1c;
@@ -66,22 +66,33 @@ p{
 }
 
 #hero{
-    left: -20px;
-    bottom: -60px;
-    width: 111px;
-    height: 180px;
+    left: 10px;
+    bottom: 0px;
+    width: 79px;
+    height: 96px;
 }
 
 #mainCharacterSpeech{
-    left: 64px;
+    left: 84px;
     top: 0px;
 }
 
-#counterCharacter{
+#counterAmelia{
     right: 0px;
     bottom: 0px;
     opacity: 0;
     transition: all 1s ease-in-out;
+    width: 111px;
+    height: 180px;
+}
+
+#counterBob{
+    right: 0px;
+    bottom: 0px;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    width: 55px;
+    height: 90px;
 }
 
 #counterSpeech{
@@ -106,7 +117,6 @@ p{
     padding: 0px;
     font-size: 12px;
 }
-x
 
 .background{
     position: absolute;
@@ -137,21 +147,13 @@ x
 #character1{
     top: 152px;
     left: 480px;
-    display: none;
-}
-
-#amelia{
     width: 50px;
     height: 66px;
 }
 
 #character2{
-    display: none;
     top: 146px;
     left: 135px;
-}
-
-#bob{
     width: 50px;
     height: 66px;
 }
