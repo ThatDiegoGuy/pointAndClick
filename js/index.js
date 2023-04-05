@@ -33,32 +33,37 @@ gameWindow.onclick = function (e) {
         case "character2": //Bob
             if (checkItem("drugs")) {
                 showMessage(mainCharacterSpeech, characterAudio, "I have the drugs. Where is my money?");
-                setTimeout(function () { counterBob.style.opacity = 1;}, 4 * sec);
-                setTimeout(showMessage, 2 * sec, counterSpeech, counterAudio, "You got the drugs, he?<br>I will count it, I don't trust you." );
+                setTimeout(function () { counterBob.style.opacity = 1; }, 2 * sec);
+                setTimeout(showMessage, 2 * sec, counterSpeech, counterAudio, "You got the drugs, he?<br>I will count it, I don't trust you.");
                 setTimeout(showMessage, 4 * sec, mainCharacterSpeech, characterAudio, "Alright, sounds good.");
-                hideMessage(mainCharacterSpeech, counterSpeech);
                 setTimeout(showMessage, 8 * sec, counterAudio, counterSpeech, "You got a deal!<br>Don't come back here again, comrade.");
+                setTimeout(function () { counterBob.style.opacity = 0; }, 9 * sec);
+                setTimeout(removeItem, 9 * sec, "drugs", "drugs")
+                //removeItem("drugs","drugs");
             } else {
                 setTimeout(showMessage, 0.5 * sec, mainCharacterSpeech, characterAudio, "Good day, lad!");
-                setTimeout(function() {counterBob.style.opacity = 1;}, 2 * sec);
+                setTimeout(function () { counterBob.style.opacity = 1; }, 2 * sec);
                 setTimeout(showMessage, 5 * sec, counterSpeech, counterAudio, "Good day, son. What are you looking for?<br>Maybe some tea?");
-                setTimeout(showMessage, 9 * sec, mainCharacterSpeech, characterAudio, "I would like some of that white tea<br>if you know what I mean...");
-                setTimeout(function() {counterBob.style.opacity = 0;}, 2 * sec);
+                setTimeout(showMessage, 9 * sec, mainCharacterSpeech, characterAudio, "<br>if you know what I mean...");
+                setTimeout(function () { counterBob.style.opacity = 0; }, 13 * sec);
             }
             break;
         case "character1":  //Amelia
-        if (checkItem("drugs")){
-            setTimeout(function(){counterAmelia.style.opacity = 1;}, 2 * sec);
-            setTimeout(showMessage, 0.5 * sec, counterSpeech,counterAudio, "Hello, love! Would you like...<br>What are you doing here?");
-            setTimeout(showMessage, 3 * sec, mainCharacterSpeech, characterAudio, "I want to buy more of your drugs.");
-            setTimeout(showMessage, 5 * sec, counterSpeech, counterAudio, "I will get my batch next Tuesday.<br>Now, get lost!");
-        }else{
-            setTimeout(showMessage, 0.5 * sec, mainCharacterSpeech, characterAudio, "Greetings, ma'am!");
-            setTimeout(function() {counterAmelia.style.opacity = 1;}, 2 * sec);
-            setTimeout(showMessage, 2 * sec, counterAmelia, counterSpeech, "Hello, love! Would you like to buy something?<br>Our tea is the best in town!");
-            getItem("drugs");
-            setTimeout(function() {counterAmelia.style.opacity = 0;}, 6 * sec);
-        }
+            if (checkItem("drugs")) {
+                setTimeout(function () { counterAmelia.style.opacity = 1; }, 0.5 * sec);
+                setTimeout(showMessage, 0.5 * sec, counterSpeech, counterAudio, "Hello, love! Would you like...<br>What are you doing here?");
+                setTimeout(showMessage, 3 * sec, mainCharacterSpeech, characterAudio, "I want to buy more of your drugs.");
+                setTimeout(showMessage, 5 * sec, counterSpeech, counterAudio, "I will get my batch next Tuesday.<br>Now, get lost!");
+                setTimeout(function () { counterAmelia.style.opacity = 0; }, 6 * sec)
+            } else {
+                setTimeout(showMessage, 0.5 * sec, mainCharacterSpeech, characterAudio, "Greetings, ma'am!");
+                setTimeout(function () { counterAmelia.style.opacity = 1; }, 3 * sec);
+                setTimeout(showMessage, 4 * sec, counterSpeech, counterAudio, "Hello, love! Would you like to buy something?<br>Our tea is the best in town!");
+                setTimeout(showMessage, 7 * sec, mainCharacterSpeech, characterAudio, "I could use a cup of teas, as well as something else...<br>if you know what I mean");
+                setTimeout(showMessage, 10 * sec, counterSpeech, counterAudio, "Come to the back, I got what you need.");
+                setTimeout(getItem, 11 * sec,"drugs", "drugs");
+                setTimeout(function () { counterAmelia.style.opacity = 0; }, 13 * sec);
+            }
             break;
         default:
             hideMessage(mainCharacterSpeech, characterAudio);
@@ -68,6 +73,7 @@ gameWindow.onclick = function (e) {
 }
 
 function showMessage(targetBalloon, targetSound, message) {
+   targetSound.currentTime = 0;
     targetSound.play();
     targetBalloon.style.opacity = 1;
     targetBalloon.innerHTML = message;
@@ -95,7 +101,7 @@ function checkItem(item) {
 function showItem(itemName, itemId) {
     //Make a list item from scratch and store it in a variable
     let listItem = document.createElement("li");
-    
+
     listItem.id = itemId;
 
     //fill that list item with value of inputfield
@@ -103,4 +109,11 @@ function showItem(itemName, itemId) {
 
     //find UL with id todoContainer and attach the list item to it.
     inventoryList.appendChild(listItem);
+}
+
+function removeItem(itemName, itemId) {
+    inventory = inventory.filter(function (newinventory) {
+        return newinventory !== itemName;
+    });
+    document.getElementById(itemId).remove();
 }
