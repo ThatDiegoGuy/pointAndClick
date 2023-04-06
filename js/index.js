@@ -44,8 +44,9 @@ gameWindow.onclick = function (e) {
                 setTimeout(showMessage, 0.5 * sec, mainCharacterSpeech, characterAudio, "Good day, lad!");
                 setTimeout(function () { counterBob.style.opacity = 1; }, 2 * sec);
                 setTimeout(showMessage, 5 * sec, counterSpeech, counterAudio, "Good day, son. What are you looking for?<br>Maybe some tea?");
-                setTimeout(showMessage, 9 * sec, mainCharacterSpeech, characterAudio, "<br>if you know what I mean...");
-                setTimeout(function () { counterBob.style.opacity = 0; }, 13 * sec);
+                setTimeout(showMessage, 9 * sec, mainCharacterSpeech, characterAudio, "I would love myself some green tea, yeah.<br> *whispers* Are you also in some other types of bussiness?");
+                setTimeout(showMessage, 12 * sec, counterSpeech, counterAudio, "Coming right up!<br>Go to the lady across the street, she has what you need.")
+                setTimeout(function () { counterBob.style.opacity = 0; }, 16 * sec);
             }
             break;
         case "character1":  //Amelia
